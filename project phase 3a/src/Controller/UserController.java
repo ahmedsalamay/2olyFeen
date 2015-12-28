@@ -68,4 +68,12 @@ public class UserController {
 		
 		
 	}*/
+	public int verifycreditcardController(String CreditCard) throws Exception
+	{ UserModel user=new UserModel();
+		if(user.verifycreditcardModel(CreditCard)!=-1){
+			return 1 ;
+		}
+		return -1;
+		
+	}
 }

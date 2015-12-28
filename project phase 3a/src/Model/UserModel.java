@@ -165,5 +165,15 @@ public void CheckInModel(String name,String text,int ID) throws Exception
 	
 	
 }
+public int verifycreditcardModel(String CreditCard) throws Exception
+{
+	db.readDataBase();
+	if(db.searchCreditcardin(CreditCard)!=-1&&db.searchUserinCC(CreditCard)==-1){
+		return 1;
+	}
+	return-1;
+	
+}
+
 
 }

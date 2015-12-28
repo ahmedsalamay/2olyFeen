@@ -49,7 +49,7 @@ public class AllakFeen extends JFrame {
 	 */
 	private void initialize() {
 		setTitle("2allak feen ");
-		setBounds(100, 100, 450, 480);
+		setBounds(100, 100, 477, 480);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
@@ -83,7 +83,7 @@ public class AllakFeen extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("E:\\fci 3\\3rd\\first term\\SW Engineering\\nasser.png"));
-		lblNewLabel.setBounds(134, 22, 276, 237);
+		lblNewLabel.setBounds(133, 22, 276, 237);
 		getContentPane().add(lblNewLabel);;
 		
 	}

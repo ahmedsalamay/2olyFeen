@@ -1,7 +1,45 @@
 package Model;
+import java.sql.SQLException;
+
 import javax.swing.JOptionPane;
 
+import Database.Database;
+
 public class CheckInModel {
+String PlaceName;
+String UserName;
+String Text;
+Database db=new Database();
+	@Override
+public String toString() {
+		
+	return "" + UserName + " At : " + PlaceName + " Feeling: " + Text + "";
+	
+}
+
+	public String getPlaceName() {
+	return PlaceName;
+}
+
+public void setPlaceName(String placeName) {
+	PlaceName = placeName;
+}
+
+public String getUserName() {
+	return UserName;
+}
+
+public void setUserName(String userName) {
+	UserName = userName;
+}
+
+public String getText() {
+	return Text;
+}
+
+public void setText(String text) {
+	Text = text;
+}
 
 	public CheckInModel() {
 		
@@ -39,6 +77,10 @@ public class CheckInModel {
 
 	}
 	}
-	
+	public void showcheckinsModel() throws Exception 
+	{ db.readDataBase();
+		db.showcheckins();
+		
+	}
 	
 }

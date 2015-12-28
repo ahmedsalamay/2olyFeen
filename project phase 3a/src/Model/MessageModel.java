@@ -1,12 +1,15 @@
 package Model;
 import java.util.Date;
 
+import Database.Database;
+
 
 public class MessageModel {
 private UserModel sender;
 private ConversationModel conversation;
 private String content;
 private Date time;
+Database db=new Database();
 	public MessageModel() {
 		// TODO Auto-generated constructor stub
 		sender=new UserModel();
@@ -44,6 +47,10 @@ private Date time;
 	}
 	public void setTime(Date time) {
 		this.time = time;
+	}
+	public void 	SendMessageModel (int ID_sender,String emailReciever,String text) throws Exception{
+		db.readDataBase();
+		db.SendMessageDB(ID_sender, emailReciever, text);
 	}
 
 }

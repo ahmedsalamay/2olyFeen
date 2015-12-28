@@ -25,4 +25,10 @@ public class CheckInController {
 	{
 		checkk.UpdateCheckin(name, Text);
 	}
+	
+	public void showcheckinsController() throws Exception 
+	{
+		CheckInModel Ch=new CheckInModel();
+		Ch.showcheckinsModel();
+	}
 }

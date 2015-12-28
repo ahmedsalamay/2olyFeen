@@ -5,6 +5,8 @@ import java.awt.HeadlessException;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import Controller.BrandController;
+import Controller.CheckInController;
 import Controller.PlaceController;
 import Controller.UserController;
 import others.NormalUser;
@@ -31,6 +33,7 @@ public class Home_page extends JFrame {
 	private JTextField textField_9;
 	private JTextField textField_10;
 	private JTextField textField_11;
+	private JTextField textField_12;
 
 	/**
 	 * Launch the application.
@@ -59,8 +62,8 @@ public class Home_page extends JFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		setBounds(100, 100, 598, 487);
+		setTitle("Home Page ");
+		setBounds(100, 100, 598, 533);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
@@ -308,5 +311,109 @@ public class Home_page extends JFrame {
 		JLabel lblFeeling = new JLabel("Feeling");
 		lblFeeling.setBounds(256, 120, 46, 14);
 		getContentPane().add(lblFeeling);
+		
+		JButton btnTaste = new JButton("Taste");
+		btnTaste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				Taste t=new Taste();
+		
+				t.setVisible(true);
+			}
+		});
+		btnTaste.setBounds(23, 423, 89, 23);
+		getContentPane().add(btnTaste);
+		
+		JButton btnNewButton_7 = new JButton("Brand");
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Brand b=new Brand();
+		
+				b.setVisible(true);
+			}
+		});
+		btnNewButton_7.setBounds(140, 423, 89, 23);
+		getContentPane().add(btnNewButton_7);
+		
+		JButton btnGetOnlineUsers = new JButton("Get Online Users");
+		btnGetOnlineUsers.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Online o=new Online();
+		
+				o.setVisible(true);
+			}
+		});
+		btnGetOnlineUsers.setBounds(268, 423, 133, 23);
+		getContentPane().add(btnGetOnlineUsers);
+		
+		textField_12 = new JTextField();
+		textField_12.setBounds(131, 381, 86, 20);
+		getContentPane().add(textField_12);
+		textField_12.setColumns(10);
+		
+		JLabel lblBrandName = new JLabel("Brand Name");
+		lblBrandName.setBounds(33, 384, 66, 14);
+		getContentPane().add(lblBrandName);
+		
+		JButton btnFollow = new JButton("Follow");
+		btnFollow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int user_id=Sign_in.ID;
+				BrandController BC=new BrandController();
+				try {
+					BC.followBrandController(textField_12.getText(), user_id);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
+		btnFollow.setBounds(239, 381, 89, 23);
+		getContentPane().add(btnFollow);
+		
+		JButton btnSignOut = new JButton("Sign Out");
+		btnSignOut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				AllakFeen a=new AllakFeen();
+				a.setVisible(true);
+			}
+		});
+		btnSignOut.setBounds(23, 460, 89, 23);
+		getContentPane().add(btnSignOut);
+		
+		JButton btnNewButton_8 = new JButton("Message");
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Message m=new Message();
+				m.setVisible(true);
+			}
+		});
+		btnNewButton_8.setBounds(421, 423, 89, 23);
+		getContentPane().add(btnNewButton_8);
+		
+		JButton btnCheckinPosts = new JButton("Checkin Posts");
+		btnCheckinPosts.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*dispose();
+				checkins c=new checkins();
+				c.setVisible(true);*/
+				CheckInController ch=new CheckInController();
+				try {
+				//	ch.showcheckinsController();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				
+			}
+		});
+		btnCheckinPosts.setBounds(421, 389, 110, 23);
+		getContentPane().add(btnCheckinPosts);
 	}
 }

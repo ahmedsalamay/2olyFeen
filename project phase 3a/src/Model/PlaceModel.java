@@ -10,11 +10,11 @@ import javax.swing.JOptionPane;
 import Database.Database;
 
 public class PlaceModel {
-private int ID;
-private String name;
-private Double rate;
-private int numberofcheckins;
-private String description;
+	public  int ID;
+public  String name;
+public  Double rate;
+public  int numberofcheckins;
+public String description;
 private Database db=new Database();
 
 //***************setters and getters and constructors*****************************************************************
